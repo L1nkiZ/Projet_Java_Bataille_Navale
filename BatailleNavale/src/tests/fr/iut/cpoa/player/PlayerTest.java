@@ -2,8 +2,11 @@ package tests.fr.iut.cpoa.player
 
 import fr.iut.cpoa.player.Joueur;
 import static fr.iut.cpoa.player.Joueur.tirer;
-import static fr.iut.cpoa.player.Joueur.tirer;
+import static fr.iut.cpoa.player.Joueur.setAGagne;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PlayerTest {
 

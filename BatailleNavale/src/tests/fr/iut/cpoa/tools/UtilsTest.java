@@ -1,6 +1,9 @@
 package tests.fr.iut.cpoa.tools;
 
 import static fr.iut.cpoa.tools.Utils.checkString;
+import static fr.iut.cpoa.tools.Utils.bataille;
+import static fr.iut.cpoa.tools.Utils.tour;
+
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
@@ -20,4 +23,9 @@ public class UtilsTest {
 		Assert.assertFalse(checkString("sdqsdjjkl"));
 	}
 
+	@Test
+	public void testBataille() { assertTrue(Utils.bataille(1,2)); }
+
+	@Test
+	public void testTour() { assertTrue(Utils.tour(1)); }
 }

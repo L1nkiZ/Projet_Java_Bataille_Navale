@@ -1,6 +1,8 @@
 package tests.fr.iut.cpoa.ship;
 
-import static fr.iut.cpoa.tools.Utils.checkString;
+import static fr.iut.cpoa.ship.Vaisseau.getNomBateau;
+import static fr.iut.cpoa.ship.Vaisseau.getTaille;
+import static fr.iut.cpoa.ship.Vaisseau.setCoule;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
@@ -8,7 +10,7 @@ import org.junit.Test;
 
 import fr.iut.cpoa.ship.Vaisseau;
 
-public class VaisseauTest {+-
+public class VaisseauTest {
 
     private final int idBateau;
     private final String nomBateau;
@@ -40,5 +42,8 @@ public class VaisseauTest {+-
     public void testCheckIntIsNotValid() {assertFalse(Vaisseau.setTailleCaseFromId("123"));}
 
     @Test
-    public void testSetEstCoule()
+    public void testSetEstCoule() {
+        assertTrue(PlayerJoyce.setAGagne("True"));
+    }
+
 }
