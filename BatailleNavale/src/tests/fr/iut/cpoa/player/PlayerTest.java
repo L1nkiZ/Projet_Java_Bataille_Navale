@@ -1,16 +1,32 @@
-package tests.fr.iut.cpoa.player;
+package tests.fr.iut.cpoa.player
 
-import fr.iut.cpoa.grid.Grille;
-import static fr.iut.cpoa.tools.Utils.checkString;
+import fr.iut.cpoa.player.Joueur;
+import static fr.iut.cpoa.player.Joueur.tirer;
+import static fr.iut.cpoa.player.Joueur.tirer;
 import static org.junit.Assert.assertTrue;
 
 public class PlayerTest {
-    @Test
-    public void testCheckStringIsValid() {
-        assertTrue(Utils.checkString("A1"));
+
+    private final int idJoueur;
+    private boolean aGagne;
+
+    @Before
+    public void setUp() { // instancier un objet sur lequel on fait des tests
+        System.out.println("setUp tests unitaires Player");
+        idJoueur = 1;
+        aGagne = false;
+
+        Player PlayerJoyce = new Player(idJoueur, aGagne);
     }
-    public int testTirer(Joueur joueur, String coordonnees){
-        return joueur.grille.tir(coordonnees);
+
+    @Test
+    public int testTirerIsValid(){
+        assertTrue(PlayerJoyce.tirer("True"));
+    }
+
+    @Test
+    public void testSetAGagneIsValid(){
+        assertTrue(PlayerJoyce.setAGagne("True"));
     }
 }
 
