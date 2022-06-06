@@ -2,6 +2,8 @@ package modeles;
 
 public class ModeleJoueur {
 
+
+
 	private int idJoueur;
 	public ModeleGrille grille;
 	
