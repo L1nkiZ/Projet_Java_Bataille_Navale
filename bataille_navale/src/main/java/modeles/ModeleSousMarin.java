@@ -1,6 +1,7 @@
 package modeles;
+import interfaces.ISousMarin;
 
-public class ModeleSousMarin extends ModeleBateau {
+public class ModeleSousMarin extends ModeleBateau implements ISousMarin{
 
 	public ModeleSousMarin() {
 		super();

@@ -1,6 +1,7 @@
 package modeles;
+import interfaces.IPorteAvions;
 
-public class ModelePorteAvions extends ModeleBateau {
+public class ModelePorteAvions extends ModeleBateau implements IPorteAvions {
 
 	public ModelePorteAvions() {
 		super();

@@ -1,6 +1,7 @@
 package modeles;
+import interfaces.IBateau;
 
-public abstract class ModeleBateau {
+public abstract class ModeleBateau implements IBateau{
 	
 //	protected int idBateau;
 	protected int Longueur;
@@ -15,6 +16,31 @@ public abstract class ModeleBateau {
 		this.estPlace=false;
 	}
 	
+
+	public int Longueur(){
+		return this.Longueur;
+	};
+	public int coordoneeHorizontale(){
+		return this.coordoneeHorizontale;
+	};
+	public int coordoneeVerticale(){
+		return this.coordoneeVerticale;
+	};
+	public boolean horizontal(){
+		return this.horizontal;
+	};
+	public boolean[] caseTouchee(){
+		return this.caseTouchee;
+	};
+	public boolean estPlace(){
+		return this.estPlace;
+	};
+	public void estPlace(boolean valeur){
+		this.estPlace=valeur;
+	};
+
+
+
 	public void PlacerBateau(int coordoneeHorizontale, int coordoneeVerticale, boolean horizontal){
 		this.coordoneeHorizontale=coordoneeHorizontale;
 		this.coordoneeVerticale=coordoneeVerticale;

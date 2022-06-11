@@ -1,11 +1,12 @@
 package interfaces;
 
-import modeles.ModeleGrille;
 
 public interface IGrille {
-    boolean placerBateau(int numBateau, int coordoneeHorizontale, int coordoneeVerticale, boolean horizontal);
+    public boolean placerBateau(int numBateau, int coordoneeHorizontale, int coordoneeVerticale, boolean horizontal);
 
-    boolean tousCoules();
+    public boolean tousCoules();
 
-    boolean essuyerTir(int coordoneeHorizontale, int coordoneeVerticale);
+    public int essuyerTir(int coordoneeHorizontale, int coordoneeVerticale);
+
+    public boolean bateauPerdu(int numBateau);
 }

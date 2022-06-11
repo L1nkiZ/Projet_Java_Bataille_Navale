@@ -1,6 +1,7 @@
 package modeles;
+import interfaces.IContreTorpilleur;
 
-public class ModeleContreTorpilleur extends ModeleBateau {
+public class ModeleContreTorpilleur extends ModeleBateau implements IContreTorpilleur {
 
 	public ModeleContreTorpilleur() {
 		super();

@@ -1,6 +1,7 @@
 package modeles;
+import interfaces.ICroiseur;
 
-public class ModeleCroiseur extends ModeleBateau {
+public class ModeleCroiseur extends ModeleBateau implements ICroiseur{
 
 	public ModeleCroiseur() {
 		super();
