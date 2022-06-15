@@ -22,12 +22,16 @@ public class ModeleGrille implements IGrille {
 	public boolean placerBateau(int numBateau, int coordoneeHorizontale, int coordoneeVerticale, boolean horizontal) {
 		this.bateaux[numBateau].PlacerBateau(coordoneeHorizontale, coordoneeVerticale, horizontal);
 		this.bateaux[numBateau].estPlace(false); // normalement deja a false
-		
-		Coordonnees coordonnees;
+
+		Coordonnees coordonnees=new Coordonnees(coordoneeHorizontale, coordoneeVerticale);
+		if (!coordonnees.valides()) {
+			return false;
+		}
+
 		if (horizontal) {
-			coordonnees=new Coordonnees(coordoneeHorizontale+this.bateaux[numBateau].Longueur(), coordoneeVerticale);
+			coordonnees.x =coordoneeHorizontale+this.bateaux[numBateau].Longueur();
 		}else{
-			coordonnees=new Coordonnees(coordoneeHorizontale, coordoneeVerticale+this.bateaux[numBateau].Longueur());
+			coordonnees.y =coordoneeVerticale+this.bateaux[numBateau].Longueur();
 		}
 		if (false==coordonnees.valides()) { //Si le bateau sort de la grille
 			return false;
@@ -78,5 +82,9 @@ public class ModeleGrille implements IGrille {
 
 	public boolean bateauPerdu(int numBateau){
 		return this.bateaux[numBateau].estCoule();
+	}
+
+	public boolean estPlace(int numBateau){
+		return this.bateaux[numBateau].estPlace();
 	}
 }
