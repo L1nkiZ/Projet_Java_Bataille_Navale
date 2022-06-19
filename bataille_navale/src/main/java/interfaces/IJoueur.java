@@ -7,4 +7,5 @@ public interface IJoueur {
     public boolean placerBateau(int numBateau, int coordoneeHorizontale, int coordoneeVerticale, boolean horizontal);
     public String nomJoueur();
     public boolean bateauPerdu(int numBateau);
+    public void ecraserGrille(IGrille nouvelleGrille);
 }

@@ -53,9 +53,84 @@ public final class ModeleGrilleTests{
         this.grille.placerBateau(4, 13, 13, false);
         assertTrue(this.grille.estPlace(4) && this.grille.essuyerTir(13, 13)==4 && this.grille.essuyerTir(13, 14)==4);
     }
-/*
-    @Test public void tousCoules(){
 
+    @Test public void tousCoules(){
+        this.grille.placerBateau(4, 1, 13, true);
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 2);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 3);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 4);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 12);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 13);
+        }
+        assertTrue(this.grille.tousCoules());
     }
-    */
+
+    @Test public void tousCoules2(){
+        this.grille.placerBateau(4, 1, 13, true);
+        for (int i = 1; i < 27; i++) {
+            if (i!=4) {
+                this.grille.essuyerTir(i, 2);
+            }
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 3);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 4);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 12);
+        }
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 13);
+        }
+        assertTrue(!this.grille.tousCoules());
+    }
+
+    @Test public void essuyerTir(){
+        this.grille.placerBateau(4, 1, 13, true);
+        int rep=this.grille.essuyerTir(2, 13);
+        assertTrue(rep==4);
+    }
+
+    @Test public void essuyerTir2(){
+        this.grille.placerBateau(4, 1, 13, true);
+        int rep=this.grille.essuyerTir(13, 13);
+        assertTrue(rep==-1);
+    }
+    
+    @Test public void bateauPerdu(){
+        this.grille.placerBateau(4, 1, 13, true);
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 2);
+        }
+        assertTrue(this.grille.bateauPerdu(1));
+    }
+
+    @Test public void bateauPerdu2(){
+        this.grille.placerBateau(4, 1, 13, true);
+        for (int i = 1; i < 27; i++) {
+            this.grille.essuyerTir(i, 2);
+        }
+        this.grille.essuyerTir(1, 13);
+        assertTrue(!this.grille.bateauPerdu(4));
+    }
+
+    @Test public void estPlace(){
+        assertTrue(this.grille.estPlace(0));
+    }
+
+    @Test public void estPlace2(){
+        assertTrue(!this.grille.estPlace(4));
+    }
+
 }
