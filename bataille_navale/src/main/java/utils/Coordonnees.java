@@ -10,7 +10,11 @@ public class Coordonnees{
         char xtext=texte.toLowerCase().charAt(0);
         this.x=((int)xtext)-((int)'a')+1;
         String ytext=texte.substring(1);
-        this.y=Integer.parseInt(ytext);
+        try { 
+            this.y=Integer.parseInt(ytext); 
+        } catch(NumberFormatException e) { 
+            this.y=0;
+        }
     }
 
     public Coordonnees(Coordonnees originales){
@@ -38,5 +42,9 @@ public class Coordonnees{
             return false;
         }
         return true;
+    }
+
+    public boolean equals(Coordonnees coordonnees){
+        return this.x==coordonnees.x && this.y==coordonnees.y;
     }
 }

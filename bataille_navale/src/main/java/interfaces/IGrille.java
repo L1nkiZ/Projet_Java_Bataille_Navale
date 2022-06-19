@@ -9,4 +9,6 @@ public interface IGrille {
     public int essuyerTir(int coordoneeHorizontale, int coordoneeVerticale);
 
     public boolean bateauPerdu(int numBateau);
+
+    public boolean estPlace(int numBateau);
 }

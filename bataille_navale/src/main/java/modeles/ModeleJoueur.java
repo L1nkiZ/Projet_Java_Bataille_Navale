@@ -34,4 +34,8 @@ public class ModeleJoueur implements IJoueur {
 	public boolean bateauPerdu(int numBateau){
 		return this.grille.bateauPerdu(numBateau);
 	}
+
+	public void ecraserGrille(IGrille nouvelleGrille){
+		this.grille=nouvelleGrille;
+	}
 }
